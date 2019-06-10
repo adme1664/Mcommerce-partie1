@@ -119,5 +119,11 @@ public class ProductController {
         return produitsParMarge;
     }
 
+    //Retourne les produits par ordre alphabetique
+    @ApiOperation(value="Retourne les produits par ordre alphabetique")
+    @RequestMapping(value = "/ordreAlphabetique", method = RequestMethod.GET)
+    public List<Product> trierProduitsParOrdreAlphabetique(){
+        return productDao.findAllByOrderByNomAsc();
+    }
 
 }
